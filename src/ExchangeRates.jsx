@@ -4,7 +4,9 @@ import { Box, Typography, CircularProgress } from "@mui/material";
 import CurrencyConverterForm from "./CurrencyConverterForm";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-const API_URL = `/api/latest?access_key=${API_KEY}`;
+const API_URL = import.meta.env.PROD
+  ? 'https://data.fixer.io/api/latest'
+  : `/api/latest?access_key=${API_KEY}`;
 
 const ExchangeRates = () => {
   const [rates, setRates] = useState({});
