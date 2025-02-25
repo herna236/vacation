@@ -5,7 +5,7 @@ import CurrencyConverterForm from "./CurrencyConverterForm";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const API_URL = import.meta.env.PROD
-  ? 'https://data.fixer.io/api/latest'
+  ? `https://data.fixer.io/api/latest?access_key=${API_KEY}`
   : `/api/latest?access_key=${API_KEY}`;
 
 const ExchangeRates = () => {
